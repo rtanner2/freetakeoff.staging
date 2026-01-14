@@ -1,133 +1,57 @@
-class Calculator {
-    constructor(previousOperandElement, currentOperandElement) {
-        this.previousOperandElement = previousOperandElement;
-        this.currentOperandElement = currentOperandElement;
-        this.clear();
-    }
+// Global variables
+let currentInput = '';
+let operator = '';
+let previousInput = '';
+let shouldResetDisplay = false;
 
-    clear() {
-        this.currentOperand = '';
-        this.previousOperand = '';
-        this.operation = undefined;
-        this.updateDisplay();
-    }
-
-    delete() {
-        this.currentOperand = this.currentOperand.toString().slice(0, -1);
-        this.updateDisplay();
-    }
-
-    appendNumber(number) {
-        if (number === '.' && this.currentOperand.includes('.')) return;
-        this.currentOperand = this.currentOperand.toString() + number.toString();
-        this.updateDisplay();
-    }
-
-    chooseOperation(operation) {
-        if (this.currentOperand === '') return;
-        if (this.previousOperand !== '') {
-            this.compute();
-        }
-        this.operation = operation;
-        this.previousOperand = this.currentOperand;
-        this.currentOperand = '';
-        this.updateDisplay();
-    }
-
-    compute() {
-        let computation;
-        const prev = parseFloat(this.previousOperand);
-        const current = parseFloat(this.currentOperand);
-        
-        if (isNaN(prev) || isNaN(current)) return;
-        
-        switch (this.operation) {
-            case '+':
-                computation = prev + current;
-                break;
-            case '-':
-                computation = prev - current;
-                break;
-            case '×':
-                computation = prev * current;
-                break;
-            case '÷':
-                if (current === 0) {
-                    alert('Cannot divide by zero!');
-                    return;
-                }
-                computation = prev / current;
-                break;
-            default:
-                return;
-        }
-        
-        this.currentOperand = computation;
-        this.operation = undefined;
-        this.previousOperand = '';
-        this.updateDisplay();
-    }
-
-    getDisplayNumber(number) {
-        const stringNumber = number.toString();
-        const integerDigits = parseFloat(stringNumber.split('.')[0]);
-        const decimalDigits = stringNumber.split('.')[1];
-        
-        let integerDisplay;
-        if (isNaN(integerDigits)) {
-            integerDisplay = '';
-        } else {
-            integerDisplay = integerDigits.toLocaleString('en', {
-                maximumFractionDigits: 0
-            });
-        }
-        
-        if (decimalDigits != null) {
-            return `${integerDisplay}.${decimalDigits}`;
-        } else {
-            return integerDisplay;
-        }
-    }
-
-    updateDisplay() {
-        this.currentOperandElement.innerText = 
-            this.getDisplayNumber(this.currentOperand) || '0';
-        
-        if (this.operation != null) {
-            this.previousOperandElement.innerText = 
-                `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`;
-        } else {
-            this.previousOperandElement.innerText = '';
-        }
-    }
+// Function to append numbers and operators to display
+function appendToDisplay(value) {
+    // Add number or operator to current input
+    // Handle decimal point logic
+    // Update display
 }
 
-// Initialize calculator
-const previousOperandElement = document.getElementById('previousOperand');
-const currentOperandElement = document.getElementById('currentOperand');
+// Function to clear the display
+function clearDisplay() {
+    // Reset all variables
+    // Clear display input
+}
 
-const calculator = new Calculator(previousOperandElement, currentOperandElement);
+// Function to delete last character
+function deleteLastChar() {
+    // Remove last character from current input
+    // Update display
+}
 
-// Keyboard support
+// Function to perform calculation
+function calculate() {
+    // Validate input
+    // Perform arithmetic operation
+    // Handle division by zero
+    // Update display with result
+    // Reset for next calculation
+}
+
+// Helper function to update display
+function updateDisplay() {
+    // Update the display input field
+}
+
+// Helper function to perform arithmetic
+function performOperation(prev, current, operator) {
+    // Switch statement for +, -, *, /
+    // Return calculated result
+    // Handle edge cases
+}
+
+// Keyboard support (optional)
 document.addEventListener('keydown', function(event) {
-    const key = event.key;
-    
-    if (key >= '0' && key <= '9' || key === '.') {
-        calculator.appendNumber(key);
-    } else if (key === '+') {
-        calculator.chooseOperation('+');
-    } else if (key === '-') {
-        calculator.chooseOperation('-');
-    } else if (key === '*') {
-        calculator.chooseOperation('×');
-    } else if (key === '/') {
-        event.preventDefault();
-        calculator.chooseOperation('÷');
-    } else if (key === 'Enter' || key === '=') {
-        calculator.compute();
-    } else if (key === 'Escape' || key === 'c' || key === 'C') {
-        calculator.clear();
-    } else if (key === 'Backspace') {
-        calculator.delete();
-    }
+    // Map keyboard keys to calculator functions
+    // Numbers 0-9, operators +,-,*,/, Enter for equals, etc.
+});
+
+// Initialize calculator on page load
+window.addEventListener('load', function() {
+    // Any initialization code
+    // Set focus, clear display, etc.
 });

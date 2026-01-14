@@ -1,191 +1,65 @@
 /* Reset and base styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    /* Reset margins, padding, box-sizing */
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+    /* Center calculator, set background, font family */
 }
 
 .calculator-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 400px;
+    /* Flex center the calculator on page */
 }
 
 .calculator {
-    background: #2c3e50;
-    border-radius: 20px;
-    padding: 25px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    width: 100%;
-    max-width: 350px;
+    /* Main calculator styling - rounded corners, shadow, width */
 }
 
 .display {
-    background: #34495e;
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 20px;
-    text-align: right;
-    min-height: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    /* Display area styling */
 }
 
-.previous-operand {
-    color: #bdc3c7;
-    font-size: 14px;
-    min-height: 20px;
-    word-wrap: break-word;
-    word-break: break-all;
-}
-
-.current-operand {
-    color: #ecf0f1;
-    font-size: 32px;
-    font-weight: 300;
-    word-wrap: break-word;
-    word-break: break-all;
+.display input {
+    /* Input field - large text, right align, no border */
 }
 
 .buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    /* Button grid container - CSS Grid 4 columns */
 }
 
 .btn {
-    border: none;
-    border-radius: 12px;
-    font-size: 18px;
-    font-weight: 500;
-    height: 60px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    outline: none;
+    /* Base button styles - size, font, borders, hover effects */
 }
 
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    /* Hover state for buttons */
 }
 
 .btn:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    /* Active/pressed state */
 }
 
-.btn-number {
-    background: #3498db;
-    color: white;
+.btn.number {
+    /* Number button specific colors */
 }
 
-.btn-number:hover {
-    background: #2980b9;
+.btn.operator {
+    /* Operator button colors - different from numbers */
 }
 
-.btn-operator {
-    background: #e67e22;
-    color: white;
+.btn.equals {
+    /* Equals button - accent color, spans 2 rows */
 }
 
-.btn-operator:hover {
-    background: #d35400;
+.btn.clear {
+    /* Clear button - warning/red color */
 }
 
-.btn-equals {
-    background: #27ae60;
-    color: white;
-    grid-row: span 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.btn.zero {
+    /* Zero button spans 2 columns */
 }
 
-.btn-equals:hover {
-    background: #229954;
-}
-
-.btn-clear {
-    background: #e74c3c;
-    color: white;
-}
-
-.btn-clear:hover {
-    background: #c0392b;
-}
-
-.btn-delete {
-    background: #f39c12;
-    color: white;
-}
-
-.btn-delete:hover {
-    background: #e67e22;
-}
-
-.btn-zero {
-    grid-column: span 2;
-}
-
-/* Mobile responsiveness */
+/* Responsive design */
 @media (max-width: 480px) {
-    .calculator {
-        padding: 20px;
-        max-width: 100%;
-    }
-    
-    .display {
-        padding: 15px;
-        min-height: 70px;
-    }
-    
-    .current-operand {
-        font-size: 28px;
-    }
-    
-    .btn {
-        height: 55px;
-        font-size: 16px;
-    }
-    
-    .buttons {
-        gap: 12px;
-    }
-}
-
-@media (max-width: 320px) {
-    .calculator {
-        padding: 15px;
-    }
-    
-    .display {
-        padding: 12px;
-        min-height: 60px;
-    }
-    
-    .current-operand {
-        font-size: 24px;
-    }
-    
-    .btn {
-        height: 50px;
-        font-size: 14px;
-    }
-    
-    .buttons {
-        gap: 10px;
-    }
+    /* Mobile adjustments - smaller calculator, larger buttons */
 }
