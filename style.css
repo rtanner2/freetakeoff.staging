@@ -1,4 +1,4 @@
-/* Reset and base styles */
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,185 +7,541 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header and Navigation */
+.header {
+    background: linear-gradient(135deg, #2c5530, #4a7c59);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.nav-brand h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #a8d5ba;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(44, 85, 48, 0.8), rgba(74, 124, 89, 0.8)), 
+                linear-gradient(to bottom, #e8f5e8, #d4e7d4);
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
 }
 
-.calculator-container {
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 3rem 0;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat strong {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #a8d5ba;
+}
+
+.stat span {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary, .btn-outline {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #ff6b35;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #e55a2b;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #2c5530;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #2c5530;
+    border: 2px solid #2c5530;
+}
+
+.btn-outline:hover {
+    background: #2c5530;
+    color: white;
+}
+
+/* Sections */
+section {
+    padding: 4rem 0;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2c5530;
+}
+
+/* Featured Trails */
+.featured-trails {
+    background: white;
+}
+
+.trail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.trail-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.trail-card:hover {
+    transform: translateY(-5px);
+}
+
+.trail-image {
+    height: 200px;
+    background: linear-gradient(45deg, #a8d5ba, #2c5530);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    max-width: 400px;
+    color: white;
+    font-weight: 600;
 }
 
-.calculator {
-    background: #2c3e50;
+.trail-info {
+    padding: 1.5rem;
+}
+
+.trail-info h3 {
+    color: #2c5530;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.trail-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.difficulty {
+    padding: 4px 12px;
     border-radius: 20px;
-    padding: 25px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    width: 100%;
-    max-width: 350px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
-.display {
-    background: #34495e;
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 20px;
-    text-align: right;
-    min-height: 80px;
+.difficulty.easy {
+    background: #d4edda;
+    color: #155724;
+}
+
+.difficulty.moderate {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.difficulty.hard {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.distance, .elevation {
+    background: #e9ecef;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.trail-features {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.feature {
+    background: #f8f9fa;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+.view-all {
+    text-align: center;
+}
+
+/* Interactive Map */
+.interactive-map {
+    background: #f8f9fa;
+}
+
+.map-placeholder {
+    background: white;
+    border-radius: 12px;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.map-mockup p {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.map-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.marker {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.marker.hiking { background: #28a745; }
+.marker.scenic { background: #007bff; }
+.marker.waterfall { background: #17a2b8; }
+.marker.visitor { background: #ffc107; }
+
+/* Attractions */
+.attractions {
+    background: white;
+}
+
+.attraction-list {
+    display: grid;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.attraction-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 4px solid #2c5530;
+}
+
+.attraction-icon {
+    font-size: 2rem;
+    min-width: 60px;
+    text-align: center;
+}
+
+.attraction-content h3 {
+    color: #2c5530;
+    margin-bottom: 0.5rem;
+}
+
+.attraction-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tag {
+    background: #e9ecef;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Trip Planner */
+.trip-planner {
+    background: #f8f9fa;
+}
+
+.planner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.planner-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.planner-card h3 {
+    color: #2c5530;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.planner-options {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 1rem;
 }
 
-.previous-operand {
-    color: #bdc3c7;
-    font-size: 14px;
-    min-height: 20px;
-    word-wrap: break-word;
-    word-break: break-all;
-}
-
-.current-operand {
-    color: #ecf0f1;
-    font-size: 32px;
-    font-weight: 300;
-    word-wrap: break-word;
-    word-break: break-all;
-}
-
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-}
-
-.btn {
-    border: none;
-    border-radius: 12px;
-    font-size: 18px;
-    font-weight: 500;
-    height: 60px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    outline: none;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.btn:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.btn-number {
-    background: #3498db;
-    color: white;
-}
-
-.btn-number:hover {
-    background: #2980b9;
-}
-
-.btn-operator {
-    background: #e67e22;
-    color: white;
-}
-
-.btn-operator:hover {
-    background: #d35400;
-}
-
-.btn-equals {
-    background: #27ae60;
-    color: white;
-    grid-row: span 2;
+.planner-options label {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
 }
 
-.btn-equals:hover {
-    background: #229954;
+.planner-cta {
+    text-align: center;
 }
 
-.btn-clear {
-    background: #e74c3c;
+/* Weather Conditions */
+.weather-conditions {
+    background: white;
+}
+
+.weather-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.weather-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 3px solid transparent;
+}
+
+.weather-card h3 {
+    color: #2c5530;
+    margin-bottom: 1rem;
+}
+
+.temp {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c5530;
+    margin-bottom: 0.5rem;
+}
+
+.condition {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.alert {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.alert.good {
+    background: #d4edda;
+    color: #155724;
+}
+
+.alert.warning {
+    background: #fff3cd;
+    color: #856404;
+}
+
+/* Footer */
+.footer {
+    background: #2c5530;
     color: white;
+    padding: 3rem 0 1rem;
 }
 
-.btn-clear:hover {
-    background: #c0392b;
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
-.btn-delete {
-    background: #f39c12;
+.footer-section h4 {
+    margin-bottom: 1rem;
+    color: #a8d5ba;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
     color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.btn-delete:hover {
-    background: #e67e22;
+.footer-section ul li a:hover {
+    color: #a8d5ba;
 }
 
-.btn-zero {
-    grid-column: span 2;
+.footer-bottom {
+    border-top: 1px solid #4a7c59;
+    padding-top: 1rem;
+    text-align: center;
+    opacity: 0.8;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 480px) {
-    .calculator {
-        padding: 20px;
-        max-width: 100%;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
     }
     
-    .display {
-        padding: 15px;
-        min-height: 70px;
+    .nav-menu {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
-    .current-operand {
-        font-size: 28px;
+    .hero-content h2 {
+        font-size: 2rem;
     }
     
-    .btn {
-        height: 55px;
-        font-size: 16px;
+    .hero-stats {
+        flex-direction: column;
+        gap: 1rem;
     }
     
-    .buttons {
-        gap: 12px;
-    }
-}
-
-@media (max-width: 320px) {
-    .calculator {
-        padding: 15px;
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
     }
     
-    .display {
-        padding: 12px;
-        min-height: 60px;
+    .trail-grid {
+        grid-template-columns: 1fr;
     }
     
-    .current-operand {
-        font-size: 24px;
+    .map-legend {
+        flex-direction: column;
+        align-items: center;
     }
     
-    .btn {
-        height: 50px;
-        font-size: 14px;
+    .attraction-item {
+        flex-direction: column;
+        text-align: center;
     }
     
-    .buttons {
-        gap: 10px;
+    .planner-grid {
+        grid-template-columns: 1fr;
     }
 }

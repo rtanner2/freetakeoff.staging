@@ -3,47 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A simple, modern web-based calculator for basic arithmetic operations">
-    <meta name="keywords" content="calculator, math, arithmetic, web calculator">
-    <meta name="author" content="Web Calculator">
-    <title>Simple Web Calculator</title>
+    <title>Blue Ridge Trail Guide - Your Complete Parkway Adventure Companion</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="calculator-container">
-        <div class="calculator">
-            <div class="display">
-                <div class="previous-operand" id="previousOperand"></div>
-                <div class="current-operand" id="currentOperand">0</div>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>🏔️ Blue Ridge Trail Guide</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#trails">Trails</a></li>
+                <li><a href="#attractions">Attractions</a></li>
+                <li><a href="#planning">Trip Planning</a></li>
+                <li><a href="#weather">Weather</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h2>Discover the Beauty of the Blue Ridge Parkway</h2>
+                <p>Your complete guide to 469 miles of scenic mountain trails, waterfalls, and breathtaking vistas</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <strong>250+</strong>
+                        <span>Hiking Trails</span>
+                    </div>
+                    <div class="stat">
+                        <strong>100+</strong>
+                        <span>Scenic Overlooks</span>
+                    </div>
+                    <div class="stat">
+                        <strong>469</strong>
+                        <span>Miles of Parkway</span>
+                    </div>
+                </div>
+                <div class="cta-buttons">
+                    <button class="btn-primary">Start Planning Your Trip</button>
+                    <button class="btn-secondary">Browse Trail Maps</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-trails" id="trails">
+            <div class="container">
+                <h2>Featured Trail Highlights</h2>
+                <div class="trail-grid">
+                    <div class="trail-card">
+                        <div class="trail-image">[Trail Image Placeholder]</div>
+                        <div class="trail-info">
+                            <h3>Rough Ridge Trail</h3>
+                            <div class="trail-meta">
+                                <span class="difficulty moderate">Moderate</span>
+                                <span class="distance">1.5 miles</span>
+                                <span class="elevation">+400ft</span>
+                            </div>
+                            <p>Stunning 360-degree views from exposed granite cliffs. Best sunrise spot on the parkway.</p>
+                            <div class="trail-features">
+                                <span class="feature">📸 Photo Spot</span>
+                                <span class="feature">🌅 Sunrise Views</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="trail-card">
+                        <div class="trail-image">[Trail Image Placeholder]</div>
+                        <div class="trail-info">
+                            <h3>Crabtree Falls</h3>
+                            <div class="trail-meta">
+                                <span class="difficulty easy">Easy</span>
+                                <span class="distance">2.8 miles</span>
+                                <span class="elevation">+200ft</span>
+                            </div>
+                            <p>Family-friendly hike to Virginia's tallest waterfall cascade with multiple viewing platforms.</p>
+                            <div class="trail-features">
+                                <span class="feature">👨‍👩‍👧‍👦 Family Friendly</span>
+                                <span class="feature">💧 Waterfall</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="trail-card">
+                        <div class="trail-image">[Trail Image Placeholder]</div>
+                        <div class="trail-info">
+                            <h3>Mount Mitchell Summit</h3>
+                            <div class="trail-meta">
+                                <span class="difficulty hard">Difficult</span>
+                                <span class="distance">5.6 miles</span>
+                                <span class="elevation">+1200ft</span>
+                            </div>
+                            <p>Highest peak east of the Mississippi with observation tower and rare spruce-fir forest.</p>
+                            <div class="trail-features">
+                                <span class="feature">🏔️ Highest Peak</span>
+                                <span class="feature">🌲 Unique Ecosystem</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="view-all">
+                    <button class="btn-outline">View All 250+ Trails</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="interactive-map">
+            <div class="container">
+                <h2>Interactive Parkway Map</h2>
+                <div class="map-placeholder">
+                    <div class="map-mockup">
+                        <p>🗺️ Interactive Map Placeholder</p>
+                        <p>Full parkway with trail markers, overlooks, and attractions</p>
+                        <div class="map-legend">
+                            <div class="legend-item">
+                                <span class="marker hiking"></span> Hiking Trails
+                            </div>
+                            <div class="legend-item">
+                                <span class="marker scenic"></span> Scenic Overlooks
+                            </div>
+                            <div class="legend-item">
+                                <span class="marker waterfall"></span> Waterfalls
+                            </div>
+                            <div class="legend-item">
+                                <span class="marker visitor"></span> Visitor Centers
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="attractions" id="attractions">
+            <div class="container">
+                <h2>Must-See Attractions & Scenic Stops</h2>
+                <div class="attraction-list">
+                    <div class="attraction-item">
+                        <div class="attraction-icon">🌉</div>
+                        <div class="attraction-content">
+                            <h3>Linn Cove Viaduct</h3>
+                            <p>Engineering marvel curving around Grandfather Mountain - Mile 304</p>
+                            <div class="attraction-tags">
+                                <span class="tag">Architecture</span>
+                                <span class="tag">Photography</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction-item">
+                        <div class="attraction-icon">🏛️</div>
+                        <div class="attraction-content">
+                            <h3>Biltmore Estate Approach</h3>
+                            <p>Historic entrance to America's largest private home - Mile 469</p>
+                            <div class="attraction-tags">
+                                <span class="tag">Historic</span>
+                                <span class="tag">Gardens</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction-item">
+                        <div class="attraction-icon">🌺</div>
+                        <div class="attraction-content">
+                            <h3>Craggy Pinnacle</h3>
+                            <p>Famous rhododendron blooms and panoramic views - Mile 364</p>
+                            <div class="attraction-tags">
+                                <span class="tag">Wildflowers</span>
+                                <span class="tag">Views</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="trip-planner" id="planning">
+            <div class="container">
+                <h2>Plan Your Perfect Blue Ridge Adventure</h2>
+                <div class="planner-grid">
+                    <div class="planner-card">
+                        <h3>🗓️ Trip Duration</h3>
+                        <div class="planner-options">
+                            <label><input type="radio" name="duration" value="day"> Day Trip</label>
+                            <label><input type="radio" name="duration" value="weekend"> Weekend (2-3 days)</label>
+                            <label><input type="radio" name="duration" value="week"> Full Week</label>
+                        </div>
+                    </div>
+                    
+                    <div class="planner-card">
+                        <h3>🥾 Activity Level</h3>
+                        <div class="planner-options">
+                            <label><input type="radio" name="activity" value="easy"> Easy (Scenic drives, short walks)</label>
+                            <label><input type="radio" name="activity" value="moderate"> Moderate (Day hikes, some elevation)</label>
+                            <label><input type="radio" name="activity" value="challenging"> Challenging (Long hikes, backpacking)</label>
+                        </div>
+                    </div>
+                    
+                    <div class="planner-card">
+                        <h3>🎯 Interests</h3>
+                        <div class="planner-options">
+                            <label><input type="checkbox"> Waterfalls</label>
+                            <label><input type="checkbox"> Mountain Views</label>
+                            <label><input type="checkbox"> Wildlife</label>
+                            <label><input type="checkbox"> Photography</label>
+                            <label><input type="checkbox"> History & Culture</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="planner-cta">
+                    <button class="btn-primary">Generate My Custom Itinerary</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="weather-conditions" id="weather">
+            <div class="container">
+                <h2>Current Trail Conditions</h2>
+                <div class="weather-grid">
+                    <div class="weather-card">
+                        <h3>Northern Section</h3>
+                        <div class="weather-info">
+                            <div class="temp">72°F</div>
+                            <div class="condition">⛅ Partly Cloudy</div>
+                            <div class="alerts">
+                                <span class="alert good">✅ All trails open</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="weather-card">
+                        <h3>Central Section</h3>
+                        <div class="weather-info">
+                            <div class="temp">68°F</div>
+                            <div class="condition">🌦️ Light Rain</div>
+                            <div class="alerts">
+                                <span class="alert warning">⚠️ Some trails muddy</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="weather-card">
+                        <h3>Southern Section</h3>
+                        <div class="weather-info">
+                            <div class="temp">75°F</div>
+                            <div class="condition">☀️ Sunny</div>
+                            <div class="alerts">
+                                <span class="alert good">✅ Perfect hiking conditions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Blue Ridge Trail Guide</h4>
+                    <p>Your complete companion for exploring the Blue Ridge Parkway's natural wonders.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#trails">Trail Directory</a></li>
+                        <li><a href="#planning">Trip Planner</a></li>
+                        <li><a href="#weather">Trail Conditions</a></li>
+                        <li><a href="#safety">Safety Guidelines</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#permits">Permits & Fees</a></li>
+                        <li><a href="#camping">Camping Info</a></li>
+                        <li><a href="#wildlife">Wildlife Guide</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
             </div>
             
-            <div class="buttons">
-                <button class="btn btn-clear" onclick="calculator.clear()">C</button>
-                <button class="btn btn-delete" onclick="calculator.delete()">⌫</button>
-                <button class="btn btn-operator" onclick="calculator.chooseOperation('÷')">÷</button>
-                <button class="btn btn-operator" onclick="calculator.chooseOperation('×')">×</button>
-                
-                <button class="btn btn-number" onclick="calculator.appendNumber('7')">7</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('8')">8</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('9')">9</button>
-                <button class="btn btn-operator" onclick="calculator.chooseOperation('-')">-</button>
-                
-                <button class="btn btn-number" onclick="calculator.appendNumber('4')">4</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('5')">5</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('6')">6</button>
-                <button class="btn btn-operator" onclick="calculator.chooseOperation('+')">+</button>
-                
-                <button class="btn btn-number" onclick="calculator.appendNumber('1')">1</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('2')">2</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('3')">3</button>
-                <button class="btn btn-equals" onclick="calculator.compute()" rowspan="2">=</button>
-                
-                <button class="btn btn-number btn-zero" onclick="calculator.appendNumber('0')">0</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('.')">.</button>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Blue Ridge Trail Guide. All rights reserved. | Not affiliated with the National Park Service</p>
             </div>
         </div>
-    </div>
-    
-    <script src="script.js"></script>
+    </footer>
 </body>
 </html>
