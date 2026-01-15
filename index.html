@@ -3,47 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A simple, modern web-based calculator for basic arithmetic operations">
-    <meta name="keywords" content="calculator, math, arithmetic, web calculator">
-    <meta name="author" content="Web Calculator">
-    <title>Simple Web Calculator</title>
+    <title>Construction Calculator - Material Estimator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="calculator-container">
-        <div class="calculator">
-            <div class="display">
-                <div class="previous-operand" id="previousOperand"></div>
-                <div class="current-operand" id="currentOperand">0</div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Construction Calculator</h1>
+            <nav class="nav">
+                <a href="#" class="nav-link">Paint</a>
+                <a href="#" class="nav-link">Mulch</a>
+                <a href="#" class="nav-link">Concrete</a>
+                <a href="#" class="nav-link">Pavers</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <section class="calculator-section">
+                <h2>Paint Calculator</h2>
+                
+                <div class="calculator-card">
+                    <div class="input-group">
+                        <label for="room-width">Room Width (ft)</label>
+                        <input type="number" id="room-width" value="12" min="0" step="0.1">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="room-length">Room Length (ft)</label>
+                        <input type="number" id="room-length" value="14" min="0" step="0.1">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="ceiling-height">Ceiling Height (ft)</label>
+                        <input type="number" id="ceiling-height" value="9" min="0" step="0.1">
+                    </div>
+                    
+                    <button class="calculate-btn">Calculate Paint Needed</button>
+                </div>
+                
+                <div class="results-card">
+                    <h3>Results</h3>
+                    <div class="result-item">
+                        <span class="result-label">Wall Paint:</span>
+                        <span class="result-value">2.5 gallons</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Ceiling Paint:</span>
+                        <span class="result-value">1.5 gallons</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Primer:</span>
+                        <span class="result-value">1 gallon</span>
+                    </div>
+                    
+                    <button class="add-to-cart-btn">Add Materials to Shopping List</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Floating Cart Button -->
+    <button class="cart-fab">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-count">6</span>
+    </button>
+
+    <!-- Cart Slide Panel -->
+    <div class="cart-panel active">
+        <div class="cart-header">
+            <h3>Shopping List</h3>
+            <button class="cart-close">✕</button>
+        </div>
+        
+        <div class="cart-content">
+            <div class="cart-item">
+                <div class="item-details">
+                    <div class="item-name">
+                        Wall Paint - Interior Latex <span class="edited-indicator">✏️</span>
+                    </div>
+                    <div class="item-quantity">2.5 gallons</div>
+                </div>
+                <div class="item-actions">
+                    <button class="action-btn edit-btn" title="Edit item">✏️</button>
+                    <button class="action-btn split-btn" title="Split item">⧉</button>
+                    <button class="action-btn delete-btn" title="Remove item">🗑️</button>
+                </div>
             </div>
             
-            <div class="buttons">
-                <button class="btn btn-clear" onclick="calculator.clear()">C</button>
-                <button class="btn btn-delete" onclick="calculator.delete()">⌫</button>
-                <button class="btn btn-operator" onclick="calculator.chooseOperation('÷')">÷</button>
-                <button class="btn btn-operator" onclick="calculator.chooseOperation('×')">×</button>
-                
-                <button class="btn btn-number" onclick="calculator.appendNumber('7')">7</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('8')">8</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('9')">9</button>
-                <button class="btn btn-operator" onclick="calculator.chooseOperation('-')">-</button>
-                
-                <button class="btn btn-number" onclick="calculator.appendNumber('4')">4</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('5')">5</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('6')">6</button>
-                <button class="btn btn-operator" onclick="calculator.chooseOperation('+')">+</button>
-                
-                <button class="btn btn-number" onclick="calculator.appendNumber('1')">1</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('2')">2</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('3')">3</button>
-                <button class="btn btn-equals" onclick="calculator.compute()" rowspan="2">=</button>
-                
-                <button class="btn btn-number btn-zero" onclick="calculator.appendNumber('0')">0</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('.')">.</button>
+            <div class="cart-item">
+                <div class="item-details">
+                    <div class="item-name">Wall Paint - Blue Accent Wall</div>
+                    <div class="item-quantity">0.8 gallons</div>
+                </div>
+                <div class="item-actions">
+                    <button class="action-btn edit-btn" title="Edit item">✏️</button>
+                    <button class="action-btn split-btn" title="Split item">⧉</button>
+                    <button class="action-btn delete-btn" title="Remove item">🗑️</button>
+                </div>
+            </div>
+            
+            <div class="cart-item">
+                <div class="item-details">
+                    <div class="item-name">Ceiling Paint - Interior Latex</div>
+                    <div class="item-quantity">1.5 gallons</div>
+                </div>
+                <div class="item-actions">
+                    <button class="action-btn edit-btn" title="Edit item">✏️</button>
+                    <button class="action-btn split-btn" title="Split item">⧉</button>
+                    <button class="action-btn delete-btn" title="Remove item">🗑️</button>
+                </div>
+            </div>
+            
+            <div class="cart-item">
+                <div class="item-details">
+                    <div class="item-name">
+                        Primer - Interior Wall Primer <span class="edited-indicator">✏️</span>
+                    </div>
+                    <div class="item-quantity">1.2 gallons</div>
+                </div>
+                <div class="item-actions">
+                    <button class="action-btn edit-btn" title="Edit item">✏️</button>
+                    <button class="action-btn split-btn" title="Split item">⧉</button>
+                    <button class="action-btn delete-btn" title="Remove item">🗑️</button>
+                </div>
+            </div>
+            
+            <div class="cart-item">
+                <div class="item-details">
+                    <div class="item-name">Concrete Mix - 80lb bags</div>
+                    <div class="item-quantity">12 bags</div>
+                </div>
+                <div class="item-actions">
+                    <button class="action-btn edit-btn" title="Edit item">✏️</button>
+                    <button class="action-btn split-btn" title="Split item">⧉</button>
+                    <button class="action-btn delete-btn" title="Remove item">🗑️</button>
+                </div>
+            </div>
+            
+            <div class="cart-item">
+                <div class="item-details">
+                    <div class="item-name">Mulch - Organic Bark</div>
+                    <div class="item-quantity">8 cubic yards</div>
+                </div>
+                <div class="item-actions">
+                    <button class="action-btn edit-btn" title="Edit item">✏️</button>
+                    <button class="action-btn split-btn" title="Split item">⧉</button>
+                    <button class="action-btn delete-btn" title="Remove item">🗑️</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-actions">
+                <button class="cart-action-btn secondary">Copy List</button>
+                <button class="cart-action-btn secondary">Clear All</button>
             </div>
         </div>
     </div>
-    
-    <script src="script.js"></script>
+
+    <!-- Edit Modal -->
+    <div class="edit-modal">
+        <div class="modal-header">
+            <h4>Edit Item</h4>
+            <button class="modal-close">✕</button>
+        </div>
+        <div class="modal-content">
+            <div class="input-group">
+                <label for="edit-description">Description</label>
+                <input type="text" id="edit-description" value="Wall Paint - Interior Latex" placeholder="Enter description">
+            </div>
+            <div class="input-group">
+                <label for="edit-quantity">Quantity</label>
+                <input type="text" id="edit-quantity" value="2.5 gallons" placeholder="Enter quantity">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="modal-btn secondary">Cancel</button>
+            <button class="modal-btn primary">Save Changes</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay (for when panel is open) -->
+    <div class="cart-overlay active"></div>
 </body>
 </html>
