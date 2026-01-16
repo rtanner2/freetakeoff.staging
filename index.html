@@ -1,49 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A simple, modern web-based calculator for basic arithmetic operations">
-    <meta name="keywords" content="calculator, math, arithmetic, web calculator">
-    <meta name="author" content="Web Calculator">
-    <title>Simple Web Calculator</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Blog System for Construction Executive's Operator Notebook - Mockup Preview</title>
+    <style>
+        body { font-family: system-ui, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        h1 { color: #333; }
+        .meta { color: #666; font-size: 0.9rem; margin-bottom: 2rem; }
+        ul { line-height: 1.8; }
+        a { color: #0066cc; }
+        .notice { background: #fff3cd; border: 1px solid #ffc107; padding: 1rem; border-radius: 4px; margin-bottom: 2rem; }
+    </style>
 </head>
 <body>
-    <div class="calculator-container">
-        <div class="calculator">
-            <div class="display">
-                <div class="previous-operand" id="previousOperand"></div>
-                <div class="current-operand" id="currentOperand">0</div>
-            </div>
-            
-            <div class="buttons">
-                <button class="btn btn-clear" onclick="calculator.clear()">C</button>
-                <button class="btn btn-delete" onclick="calculator.delete()">⌫</button>
-                <button class="btn btn-operator" onclick="calculator.chooseOperation('÷')">÷</button>
-                <button class="btn btn-operator" onclick="calculator.chooseOperation('×')">×</button>
-                
-                <button class="btn btn-number" onclick="calculator.appendNumber('7')">7</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('8')">8</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('9')">9</button>
-                <button class="btn btn-operator" onclick="calculator.chooseOperation('-')">-</button>
-                
-                <button class="btn btn-number" onclick="calculator.appendNumber('4')">4</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('5')">5</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('6')">6</button>
-                <button class="btn btn-operator" onclick="calculator.chooseOperation('+')">+</button>
-                
-                <button class="btn btn-number" onclick="calculator.appendNumber('1')">1</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('2')">2</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('3')">3</button>
-                <button class="btn btn-equals" onclick="calculator.compute()" rowspan="2">=</button>
-                
-                <button class="btn btn-number btn-zero" onclick="calculator.appendNumber('0')">0</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('.')">.</button>
-            </div>
-        </div>
+    <h1>Blog System for Construction Executive's Operator Notebook</h1>
+    <div class="meta">
+        Mockup ID: d835bab3<br>
+        Site: personal<br>
+        Generated: 2026-01-16 17:23
     </div>
-    
-    <script src="script.js"></script>
+    <div class="notice">
+        This is a <strong>mockup preview</strong> - skeleton code for review before full implementation.
+    </div>
+    <h2>Files</h2>
+    <ul>
+        <li><a href="content/blog/example-post.md">content/blog/example-post.md</a></li>
+<li><a href="src/components/Blog/BlogList.tsx">src/components/Blog/BlogList.tsx</a></li>
+<li><a href="src/components/Blog/BlogPost.tsx">src/components/Blog/BlogPost.tsx</a></li>
+<li><a href="src/components/Blog/ThemeFilter.tsx">src/components/Blog/ThemeFilter.tsx</a></li>
+<li><a href="src/lib/blog.ts">src/lib/blog.ts</a></li>
+<li><a href="src/pages/blog/[slug].tsx">src/pages/blog/[slug].tsx</a></li>
+<li><a href="src/pages/blog/index.tsx">src/pages/blog/index.tsx</a></li>
+<li><a href="src/styles/blog.module.css">src/styles/blog.module.css</a></li>
+    </ul>
 </body>
 </html>
