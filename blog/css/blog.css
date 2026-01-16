@@ -1,0 +1,35 @@
+/* Blog styles extending existing personal site theme */
+
+.blog-index {
+    /* Match existing layout patterns */
+    max-width: var(--content-width, 800px);
+    margin: 0 auto;
+    padding: var(--content-padding, 2rem);
+}
+
+.blog-post {
+    /* Article layout */
+    line-height: 1.6;
+    font-size: var(--body-font-size);
+}
+
+.blog-post header {
+    /* Post header styling */
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.blog-post time {
+    /* Date styling */
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.comments {
+    /* Comment section */
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive adjustments matching main site */
