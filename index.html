@@ -3,47 +3,660 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A simple, modern web-based calculator for basic arithmetic operations">
-    <meta name="keywords" content="calculator, math, arithmetic, web calculator">
-    <meta name="author" content="Web Calculator">
-    <title>Simple Web Calculator</title>
+    <title>Blue Ridge Trail Guide - Complete Parkway Hiking Guide</title>
+    <meta name="description" content="Comprehensive guide to hiking trails, scenic stops, and attractions along the Blue Ridge Parkway. Discover 469 miles of mountain trails from Virginia's Shenandoah to North Carolina's Smoky Mountains.">
+    <meta name="keywords" content="Blue Ridge Parkway, hiking trails, Virginia, North Carolina, Shenandoah, Smoky Mountains, trail guide, scenic stops">
+    <meta name="author" content="Blue Ridge Trail Guide">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://blueridgetrailguide.com/">
+    <meta property="og:title" content="Blue Ridge Trail Guide - Complete Parkway Hiking Guide">
+    <meta property="og:description" content="Discover 469 miles of mountain trails along America's favorite drive">
+    <meta property="og:image" content="https://blueridgetrailguide.com/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://blueridgetrailguide.com/">
+    <meta property="twitter:title" content="Blue Ridge Trail Guide - Complete Parkway Hiking Guide">
+    <meta property="twitter:description" content="Discover 469 miles of mountain trails along America's favorite drive">
+    <meta property="twitter:image" content="https://blueridgetrailguide.com/images/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- Leaflet CSS for Interactive Maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="calculator-container">
-        <div class="calculator">
-            <div class="display">
-                <div class="previous-operand" id="previousOperand"></div>
-                <div class="current-operand" id="currentOperand">0</div>
+    <!-- Skip to main content for accessibility -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="mountain-loader"></div>
+            <p>Loading Trail Guide...</p>
+        </div>
+    </div>
+
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <div class="logo">
+                <h1>
+                    <i class="fas fa-mountain" aria-hidden="true"></i>
+                    Blue Ridge Trail Guide
+                </h1>
             </div>
-            
-            <div class="buttons">
-                <button class="btn btn-clear" onclick="calculator.clear()">C</button>
-                <button class="btn btn-delete" onclick="calculator.delete()">⌫</button>
-                <button class="btn btn-operator" onclick="calculator.chooseOperation('÷')">÷</button>
-                <button class="btn btn-operator" onclick="calculator.chooseOperation('×')">×</button>
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#trails" aria-label="View hiking trails">
+                    <i class="fas fa-hiking" aria-hidden="true"></i> Trails
+                </a></li>
+                <li><a href="#scenic" aria-label="View scenic stops">
+                    <i class="fas fa-camera" aria-hidden="true"></i> Scenic Stops
+                </a></li>
+                <li><a href="#map" aria-label="View interactive map">
+                    <i class="fas fa-map-marked-alt" aria-hidden="true"></i> Map
+                </a></li>
+                <li><a href="#plan" aria-label="Plan your trip">
+                    <i class="fas fa-route" aria-hidden="true"></i> Planning
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main">
+        <section class="hero" aria-label="Hero section">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                <h1>Blue Ridge Trail Guide</h1>
+                <p class="hero-subtitle">Discover 469 miles of mountain trails along America's favorite drive</p>
+                <p class="hero-description">Complete hiking guide from Virginia's Shenandoah to North Carolina's Smoky Mountains</p>
+                <a href="#trails" class="cta-button" aria-label="Explore trails section">
+                    <i class="fas fa-compass" aria-hidden="true"></i> Explore Trails
+                </a>
+            </div>
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat">
+                    <span class="stat-number" data-target="469">0</span>
+                    <span class="stat-label">Miles of Parkway</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="100">0</span>
+                    <span class="stat-label">+ Hiking Trails</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="2">0</span>
+                    <span class="stat-label">States</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search and Filter Section -->
+        <section class="search-section" aria-label="Search and filter trails">
+            <div class="container">
+                <div class="search-container" data-aos="fade-up">
+                    <div class="search-box">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <input type="text" id="trail-search" placeholder="Search trails..." aria-label="Search trails by name or location">
+                    </div>
+                    <div class="filter-group">
+                        <select id="difficulty-filter" aria-label="Filter by difficulty">
+                            <option value="">All Difficulties</option>
+                            <option value="easy">Easy</option>
+                            <option value="moderate">Moderate</option>
+                            <option value="strenuous">Strenuous</option>
+                        </select>
+                        <select id="region-filter" aria-label="Filter by region">
+                            <option value="">All Regions</option>
+                            <option value="north">Northern Section</option>
+                            <option value="central">Central Highlands</option>
+                            <option value="south">Southern Highlands</option>
+                        </select>
+                        <button type="button" id="clear-filters" class="clear-btn" aria-label="Clear all filters">
+                            <i class="fas fa-times" aria-hidden="true"></i> Clear
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="trails" class="section" aria-labelledby="trails-heading">
+            <div class="container">
+                <h2 id="trails-heading">Popular Hiking Trails</h2>
+                <div class="grid" id="trails-grid">
+                    <article class="card trail-card" data-difficulty="moderate" data-region="central" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-image">
+                            <i class="fas fa-mountain" aria-hidden="true"></i>
+                        </div>
+                        <h3>Rough Ridge Trail</h3>
+                        <p class="meta">1.4 miles • Milepost 302.8</p>
+                        <p>Spectacular 360-degree views from rocky outcrops. One of the most photographed spots on the Parkway.</p>
+                        <div class="tags">
+                            <span class="tag difficulty moderate">Moderate</span>
+                            <span class="tag">Views</span>
+                            <span class="tag">North Carolina</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-details" data-trail="rough-ridge" aria-label="View details for Rough Ridge Trail">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i> Details
+                            </button>
+                            <button class="btn-directions" data-lat="36.1067" data-lng="-81.8742" aria-label="Get directions to Rough Ridge Trail">
+                                <i class="fas fa-directions" aria-hidden="true"></i> Directions
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="card trail-card" data-difficulty="easy" data-region="central" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-image">
+                            <i class="fas fa-seedling" aria-hidden="true"></i>
+                        </div>
+                        <h3>Craggy Pinnacle Trail</h3>
+                        <p class="meta">1.4 miles • Milepost 364.4</p>
+                        <p>Short hike to stunning 360-degree views. Famous for rhododendron blooms in June.</p>
+                        <div class="tags">
+                            <span class="tag difficulty easy">Easy</span>
+                            <span class="tag">Flowers</span>
+                            <span class="tag">Views</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-details" data-trail="craggy-pinnacle" aria-label="View details for Craggy Pinnacle Trail">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i> Details
+                            </button>
+                            <button class="btn-directions" data-lat="35.7067" data-lng="-82.3742" aria-label="Get directions to Craggy Pinnacle Trail">
+                                <i class="fas fa-directions" aria-hidden="true"></i> Directions
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="card trail-card" data-difficulty="moderate" data-region="south" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card-image">
+                            <i class="fas fa-mountain" aria-hidden="true"></i>
+                        </div>
+                        <h3>Waterrock Knob Trail</h3>
+                        <p class="meta">1.2 miles • Milepost 451.2</p>
+                        <p>High-elevation trail with panoramic mountain views. One of the highest points accessible by car.</p>
+                        <div class="tags">
+                            <span class="tag difficulty moderate">Moderate</span>
+                            <span class="tag">High Elevation</span>
+                            <span class="tag">Views</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-details" data-trail="waterrock-knob" aria-label="View details for Waterrock Knob Trail">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i> Details
+                            </button>
+                            <button class="btn-directions" data-lat="35.4567" data-lng="-83.1342" aria-label="Get directions to Waterrock Knob Trail">
+                                <i class="fas fa-directions" aria-hidden="true"></i> Directions
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="card trail-card" data-difficulty="easy" data-region="central" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card-image">
+                            <i class="fas fa-tint" aria-hidden="true"></i>
+                        </div>
+                        <h3>Linville Falls Trail</h3>
+                        <p class="meta">1-3 miles • Milepost 316.4</p>
+                        <p>Multiple viewpoints of the spectacular 45-foot waterfall. Various trail options for all abilities.</p>
+                        <div class="tags">
+                            <span class="tag difficulty easy">Easy to Moderate</span>
+                            <span class="tag">Waterfall</span>
+                            <span class="tag">Family Friendly</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-details" data-trail="linville-falls" aria-label="View details for Linville Falls Trail">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i> Details
+                            </button>
+                            <button class="btn-directions" data-lat="35.9567" data-lng="-81.9342" aria-label="Get directions to Linville Falls Trail">
+                                <i class="fas fa-directions" aria-hidden="true"></i> Directions
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="card trail-card" data-difficulty="easy" data-region="south" data-aos="fade-up" data-aos-delay="500">
+                        <div class="card-image">
+                            <i class="fas fa-circle" aria-hidden="true"></i>
+                        </div>
+                        <h3>Black Balsam Knob</h3>
+                        <p class="meta">1.6 miles • Milepost 420.2</p>
+                        <p>Bald mountain summit with 360-degree views. Easy access to Art Loeb Trail.</p>
+                        <div class="tags">
+                            <span class="tag difficulty easy">Easy</span>
+                            <span class="tag">Bald</span>
+                            <span class="tag">Views</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-details" data-trail="black-balsam" aria-label="View details for Black Balsam Knob Trail">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i> Details
+                            </button>
+                            <button class="btn-directions" data-lat="35.3267" data-lng="-82.8742" aria-label="Get directions to Black Balsam Knob Trail">
+                                <i class="fas fa-directions" aria-hidden="true"></i> Directions
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="card trail-card" data-difficulty="moderate" data-region="central" data-aos="fade-up" data-aos-delay="600">
+                        <div class="card-image">
+                            <i class="fas fa-tint" aria-hidden="true"></i>
+                        </div>
+                        <h3>Crabtree Falls Trail</h3>
+                        <p class="meta">2.9 miles • Milepost 339.5</p>
+                        <p>Loop trail to 70-foot waterfall through old-growth forest. Less crowded gem.</p>
+                        <div class="tags">
+                            <span class="tag difficulty moderate">Moderate</span>
+                            <span class="tag">Waterfall</span>
+                            <span class="tag">Loop Trail</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-details" data-trail="crabtree-falls" aria-label="View details for Crabtree Falls Trail">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i> Details
+                            </button>
+                            <button class="btn-directions" data-lat="35.8067" data-lng="-82.2342" aria-label="Get directions to Crabtree Falls Trail">
+                                <i class="fas fa-directions" aria-hidden="true"></i> Directions
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="card trail-card" data-difficulty="strenuous" data-region="central" data-aos="fade-up" data-aos-delay="700">
+                        <div class="card-image">
+                            <i class="fas fa-trophy" aria-hidden="true"></i>
+                        </div>
+                        <h3>Mount Mitchell Trail</h3>
+                        <p class="meta">4.8 miles • Milepost 355</p>
+                        <p>Highest peak east of the Mississippi. Challenging climb through spruce-fir forest.</p>
+                        <div class="tags">
+                            <span class="tag difficulty strenuous">Strenuous</span>
+                            <span class="tag">Highest Peak</span>
+                            <span class="tag">Challenge</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-details" data-trail="mount-mitchell" aria-label="View details for Mount Mitchell Trail">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i> Details
+                            </button>
+                            <button class="btn-directions" data-lat="35.7647" data-lng="-82.2651" aria-label="Get directions to Mount Mitchell Trail">
+                                <i class="fas fa-directions" aria-hidden="true"></i> Directions
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="card trail-card" data-difficulty="strenuous" data-region="central" data-aos="fade-up" data-aos-delay="800">
+                        <div class="card-image">
+                            <i class="fas fa-climbing" aria-hidden="true"></i>
+                        </div>
+                        <h3>Grandfather Mountain Profile Trail</h3>
+                        <p class="meta">2.5 miles • Milepost 305</p>
+                        <p>Rugged trail with ladder climbs and cable assists. Spectacular but demanding.</p>
+                        <div class="tags">
+                            <span class="tag difficulty strenuous">Strenuous</span>
+                            <span class="tag">Adventure</span>
+                            <span class="tag">Views</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-details" data-trail="grandfather-mountain" aria-label="View details for Grandfather Mountain Profile Trail">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i> Details
+                            </button>
+                            <button class="btn-directions" data-lat="36.1097" data-lng="-81.8011" aria-label="Get directions to Grandfather Mountain Profile Trail">
+                                <i class="fas fa-directions" aria-hidden="true"></i> Directions
+                            </button>
+                        </div>
+                    </article>
+                </div>
                 
-                <button class="btn btn-number" onclick="calculator.appendNumber('7')">7</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('8')">8</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('9')">9</button>
-                <button class="btn btn-operator" onclick="calculator.chooseOperation('-')">-</button>
-                
-                <button class="btn btn-number" onclick="calculator.appendNumber('4')">4</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('5')">5</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('6')">6</button>
-                <button class="btn btn-operator" onclick="calculator.chooseOperation('+')">+</button>
-                
-                <button class="btn btn-number" onclick="calculator.appendNumber('1')">1</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('2')">2</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('3')">3</button>
-                <button class="btn btn-equals" onclick="calculator.compute()" rowspan="2">=</button>
-                
-                <button class="btn btn-number btn-zero" onclick="calculator.appendNumber('0')">0</button>
-                <button class="btn btn-number" onclick="calculator.appendNumber('.')">.</button>
+                <!-- No results message -->
+                <div id="no-results" class="no-results" style="display: none;">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <h3>No trails found</h3>
+                    <p>Try adjusting your search criteria or clearing the filters.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="map" class="map-section" aria-labelledby="map-heading">
+            <div class="container">
+                <h2 id="map-heading" data-aos="fade-up">Trail Locations Along the Parkway</h2>
+                <div class="map-container" data-aos="fade-up" data-aos-delay="200">
+                    <div id="trail-map" style="height: 500px; width: 100%;"></div>
+                </div>
+                <p class="map-note">Click markers for trail details and directions</p>
+            </div>
+        </section>
+
+        <section id="scenic" class="section" aria-labelledby="scenic-heading">
+            <div class="container">
+                <h2 id="scenic-heading">Must-See Scenic Stops</h2>
+                <div class="grid">
+                    <article class="card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-image">
+                            <i class="fas fa-bridge" aria-hidden="true"></i>
+                        </div>
+                        <h3>Grandfather Mountain</h3>
+                        <p class="meta">Milepost 305 • Private Attraction</p>
+                        <p>Famous swinging bridge and nature preserve with hiking trails and wildlife habitats.</p>
+                        <div class="tags">
+                            <span class="tag">Bridge</span>
+                            <span class="tag">Wildlife</span>
+                        </div>
+                    </article>
+
+                    <article class="card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-image">
+                            <i class="fas fa-spa" aria-hidden="true"></i>
+                        </div>
+                        <h3>Craggy Dome</h3>
+                        <p class="meta">Milepost 364.6 • Free</p>
+                        <p>Stunning rhododendron gardens and panoramic mountain views. Peak bloom in mid-June.</p>
+                        <div class="tags">
+                            <span class="tag">Gardens</span>
+                            <span class="tag">Seasonal</span>
+                        </div>
+                    </article>
+
+                    <article class="card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card-image">
+                            <i class="fas fa-eye" aria-hidden="true"></i>
+                        </div>
+                        <h3>Looking Glass Rock Overlook</h3>
+                        <p class="meta">Milepost 417 • Free</p>
+                        <p>View of the famous granite dome and rock climbing destination. Popular photography spot.</p>
+                        <div class="tags">
+                            <span class="tag">Overlook</span>
+                            <span class="tag">Photography</span>
+                        </div>
+                    </article>
+
+                    <article class="card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card-image">
+                            <i class="fas fa-archway" aria-hidden="true"></i>
+                        </div>
+                        <h3>Linn Cove Viaduct</h3>
+                        <p class="meta">Milepost 304.4 • Free</p>
+                        <p>Engineering marvel curving around Grandfather Mountain. Visitor center and short trail.</p>
+                        <div class="tags">
+                            <span class="tag">Architecture</span>
+                            <span class="tag">Visitor Center</span>
+                        </div>
+                    </article>
+
+                    <article class="card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="card-image">
+                            <i class="fas fa-universal-access" aria-hidden="true"></i>
+                        </div>
+                        <h3>Rough Ridge Overlook</h3>
+                        <p class="meta">Milepost 302.8 • Free</p>
+                        <p>Stunning mountain vistas without the hike. Easy access for all visitors.</p>
+                        <div class="tags">
+                            <span class="tag">Accessible</span>
+                            <span class="tag">Views</span>
+                        </div>
+                    </article>
+
+                    <article class="card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="card-image">
+                            <i class="fas fa-university" aria-hidden="true"></i>
+                        </div>
+                        <h3>Waterrock Knob Visitor Center</h3>
+                        <p class="meta">Milepost 451.2 • Free</p>
+                        <p>High-elevation visitor center with exhibits and panoramic mountain views.</p>
+                        <div class="tags">
+                            <span class="tag">Education</span>
+                            <span class="tag">High Elevation</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="plan" class="section" aria-labelledby="plan-heading">
+            <div class="container">
+                <h2 id="plan-heading">Plan Your Trip by Region</h2>
+                <div class="grid">
+                    <article class="card region-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="region-header">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            <h3>Northern Section</h3>
+                        </div>
+                        <p class="meta">Virginia to Blowing Rock • Mileposts 0-291</p>
+                        <p>Rolling hills, Shenandoah views, and historic sites. Best for scenic drives and moderate hiking.</p>
+                        <ul>
+                            <li>Humpback Rocks Trail</li>
+                            <li>Sharp Top Trail</li>
+                            <li>Apple Orchard Falls</li>
+                            <li>Peaks of Otter</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">Historic</span>
+                            <span class="tag">Moderate Hiking</span>
+                        </div>
+                    </article>
+
+                    <article class="card region-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="region-header">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <h3>Central Highlands</h3>
+                        </div>
+                        <p class="meta">Blowing Rock to Asheville • Mileposts 291-384</p>
+                        <p>Dramatic peaks, waterfalls, and challenging hikes. Most popular section of the Parkway.</p>
+                        <ul>
+                            <li>Rough Ridge Trail</li>
+                            <li>Linville Falls</li>
+                            <li>Grandfather Mountain</li>
+                            <li>Linn Cove Viaduct</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">Waterfalls</span>
+                            <span class="tag">Popular</span>
+                        </div>
+                    </article>
+
+                    <article class="card region-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="region-header">
+                            <i class="fas fa-mountain" aria-hidden="true"></i>
+                            <h3>Southern Highlands</h3>
+                        </div>
+                        <p class="meta">Asheville to Cherokee • Mileposts 384-469</p>
+                        <p>Highest peaks, bald summits, and Great Smoky Mountains gateway. Advanced hiking terrain.</p>
+                        <ul>
+                            <li>Craggy Pinnacle Trail</li>
+                            <li>Mount Mitchell</li>
+                            <li>Waterrock Knob Trail</li>
+                            <li>Black Balsam Knob</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">High Elevation</span>
+                            <span class="tag">Balds</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weather Widget -->
+        <section class="weather-section" aria-label="Current weather conditions">
+            <div class="container">
+                <h2 data-aos="fade-up">Current Trail Conditions</h2>
+                <div class="weather-widget" data-aos="fade-up" data-aos-delay="200">
+                    <div class="weather-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Blue Ridge Parkway</span>
+                    </div>
+                    <div class="weather-info">
+                        <div class="weather-temp">
+                            <span id="current-temp">--°F</span>
+                            <div class="weather-desc" id="weather-desc">Loading...</div>
+                        </div>
+                        <div class="weather-details">
+                            <div class="weather-item">
+                                <i class="fas fa-eye" aria-hidden="true"></i>
+                                <span>Visibility: <span id="visibility">--</span> mi</span>
+                            </div>
+                            <div class="weather-item">
+                                <i class="fas fa-wind" aria-hidden="true"></i>
+                                <span>Wind: <span id="wind-speed">--</span> mph</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="resources-section" aria-labelledby="resources-heading">
+            <div class="container">
+                <h2 id="resources-heading">Essential Information</h2>
+                <div class="info-grid">
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="info-icon">
+                            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                        </div>
+                        <h3>Best Times to Visit</h3>
+                        <ul>
+                            <li><strong>Spring:</strong> Wildflowers, waterfalls (March-May)</li>
+                            <li><strong>Summer:</strong> Full access, rhododendrons (June-August)</li>
+                            <li><strong>Fall:</strong> Peak foliage (September-October)</li>
+                            <li><strong>Winter:</strong> Limited access, icy conditions</li>
+                        </ul>
+                    </div>
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="info-icon">
+                            <i class="fas fa-backpack" aria-hidden="true"></i>
+                        </div>
+                        <h3>What to Bring</h3>
+                        <ul>
+                            <li>Sturdy hiking boots</li>
+                            <li>Weather layers (temps vary by elevation)</li>
+                            <li>Water and snacks</li>
+                            <li>Map or GPS device</li>
+                            <li>First aid kit</li>
+                        </ul>
+                    </div>
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="info-icon">
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                        </div>
+                        <h3>Safety Tips</h3>
+                        <ul>
+                            <li>Check weather and road conditions</li>
+                            <li>Tell someone your hiking plans</li>
+                            <li>Stay on marked trails</li>
+                            <li>Be aware of elevation changes</li>
+                            <li>Carry emergency supplies</li>
+                        </ul>
+                    </div>
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="info-icon">
+                            <i class="fas fa-info-circle" aria-hidden="true"></i>
+                        </div>
+                        <h3>Park Resources</h3>
+                        <ul>
+                            <li><strong>Visitor Centers:</strong> Information and exhibits</li>
+                            <li><strong>Camping:</strong> Reservations recommended</li>
+                            <li><strong>Gas Stations:</strong> Limited availability</li>
+                            <li><strong>Emergency:</strong> Cell service spotty</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section class="newsletter-section" aria-labelledby="newsletter-heading">
+            <div class="container">
+                <div class="newsletter-content" data-aos="fade-up">
+                    <h2 id="newsletter-heading">Stay Updated on Trail Conditions</h2>
+                    <p>Get weekly updates on trail conditions, seasonal highlights, and new trail openings.</p>
+                    <form class="newsletter-form" id="newsletter-form" novalidate>
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Email address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required aria-describedby="email-error">
+                            <span class="error-message" id="email-error" role="alert"></span>
+                        </div>
+                        <button type="submit" class="newsletter-btn" aria-label="Subscribe to newsletter">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i> Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Trail Details Modal -->
+    <div id="trail-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 id="modal-title">Trail Details</h2>
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+            </header>
+            <div class="modal-body" id="modal-body">
+                <!-- Content will be populated by JavaScript -->
             </div>
         </div>
     </div>
-    
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Blue Ridge Trail Guide</h3>
+                    <p>Your complete resource for exploring the Blue Ridge Parkway's hiking trails and scenic attractions.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Follow us on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#trails">Hiking Trails</a></li>
+                        <li><a href="#scenic">Scenic Stops</a></li>
+                        <li><a href="#map">Interactive Map</a></li>
+                        <li><a href="#plan">Trip Planning</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Trail Conditions</a></li>
+                        <li><a href="#">Safety Guidelines</a></li>
+                        <li><a href="#">Park Alerts</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Blue Ridge Trail Guide. Trail conditions subject to change - check NPS alerts before hiking.</p>
+                <p>Not affiliated with the National Park Service. For official information, visit <a href="https://www.nps.gov/blri/" target="_blank" rel="noopener">nps.gov/blri</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha512-D0jXMAcNYWM3p4hYZ1U5YjQDhLJwGHZJjJKF3NRzv3KjA1W/9+3x3F37XxCEyJl+ZLkB5YrF7qnZjQAb7zI9vw==" crossorigin=""></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
